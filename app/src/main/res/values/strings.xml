@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DollarGraph</string>
+    <string name="line_graph">Line Graph</string>
+    <string name="bar_graph"> Bar Graph</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

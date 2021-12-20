@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.sgd.project.dollargraph.ui.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_lineGraphFragment"
+            app:destination="@id/lineGraphFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_barGraphFragment"
+            app:destination="@id/barGraphFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/lineGraphFragment"
+        android:name="com.sgd.project.dollargraph.ui.LineGraphFragment"
+        android:label="LineGraphFragment" />
+
+    <fragment
+        android:id="@+id/barGraphFragment"
+        android:name="com.sgd.project.dollargraph.ui.BarGraphFragment"
+        android:label="BarGraphFragment" />
+</navigation>

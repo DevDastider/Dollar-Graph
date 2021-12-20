@@ -1,0 +1,61 @@
+        private lateinit var lineChart: LineChart   //Line chart uses line data to represent values
+        private lateinit var lineData: LineData     //Line Data uses a list of entries to represent values
+        private val entryList= ArrayList<Entry>()
+
+        lineChart= findViewById(R.id.lineChart)
+
+        //Adding data to entry list
+        entryList.add(Entry(1f, 71.23251f))
+        entryList.add(Entry(2f, 71.275624f))
+        entryList.add(Entry(3f, 71.777103f))
+        entryList.add(Entry(4f, 69.797517f))
+        entryList.add(Entry(5f, 70.977918f))
+
+        //create a line data set and attach it to line chart
+        val lineDataSet= LineDataSet(entryList, "Test")
+
+        lineDataSet.color= Color.RED
+        lineDataSet.setCircleColor(Color.BLACK)
+        lineDataSet.circleRadius= 4f
+        //lineDataSet.setDrawValues(false)  //by default its true.
+        lineDataSet.lineWidth= 3f
+
+        lineDataSet.fillAlpha= 110
+        lineData= LineData(lineDataSet)
+        lineChart.data= lineData    //Setting data in chart
+        //lineChart.setVisibleXRangeMaximum(12f)
+        lineChart.invalidate()
+
+
+
+ /*binding.LineGraph.setOnClickListener {
+            Log.d("Dollar", "Clicked")
+            *//*supportFragmentManager.beginTransaction()
+                .replace(binding.fragmentContainer.id, LineGraphFragment.newInstance())
+                .addToBackStack(null)
+                .commit()
+            binding.LineGraph.visibility= View.GONE
+            binding.BarGraph.visibility= View.GONE*//*
+            openFragment(LineGraphFragment.newInstance())
+        }
+
+        binding.BarGraph.setOnClickListener {
+            //Toast.makeText(this, "Coming soon", Toast.LENGTH_SHORT).show()
+            openFragment(BarGraphFragment.newInstance())
+        }*/
+
+
+    /*private fun openFragment(fragment: Fragment){
+        supportFragmentManager.beginTransaction()
+            .replace(binding.fragmentContainer.id, fragment)
+            .addToBackStack(null)
+            .commit()
+        binding.LineGraph.visibility= View.GONE
+        binding.BarGraph.visibility= View.GONE
+    }*/
+
+    /*override fun onBackPressed() {
+        super.onBackPressed()
+        binding.LineGraph.visibility= View.VISIBLE
+        binding.BarGraph.visibility= View.VISIBLE
+    }*/
