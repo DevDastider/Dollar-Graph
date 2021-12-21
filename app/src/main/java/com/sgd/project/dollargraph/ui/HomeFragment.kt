@@ -28,22 +28,13 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.LineGraph.setOnClickListener {
-            //openFragment(LineGraphFragment.newInstance())
+
             findNavController().navigate(R.id.action_homeFragment_to_lineGraphFragment)
         }
 
         binding.BarGraph.setOnClickListener {
-            //openFragment(BarGraphFragment.newInstance())
+
             findNavController().navigate(R.id.action_homeFragment_to_barGraphFragment)
         }
     }
-
-    /*private fun openFragment(fragment: Fragment){
-        requireActivity().supportFragmentManager.beginTransaction()
-            .replace( R.id.fragmentContainer, fragment)
-            .addToBackStack(null)
-            .commit()
-        binding.LineGraph.visibility= View.GONE
-        binding.BarGraph.visibility= View.GONE
-    }*/
 }

@@ -22,25 +22,13 @@ import dagger.hilt.android.AndroidEntryPoint
 class LineGraphFragment : Fragment() {
 
     private lateinit var binding: FragmentLineGraphBinding
-    private val dollarGraphViewModel: DollarGraphViewModel by viewModels()//by activityViewModels()
-    //private lateinit var lineData: LineData
-    //private val entryList= ArrayList<Entry>()
-    //private val rateList= ArrayList<Float>()
-
-    /*companion object {
-        fun newInstance(): LineGraphFragment {
-            var instance: LineGraphFragment? = null
-            return instance ?: LineGraphFragment().also {
-                instance= it
-            }
-        }
-    }*/
+    private val dollarGraphViewModel: DollarGraphViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         binding= FragmentLineGraphBinding.inflate(inflater, container, false)
 
         return binding.root
@@ -53,27 +41,10 @@ class LineGraphFragment : Fragment() {
             Log.d("Dollar", it.toString())
             configureChart(it)
         })
-        /*val repository= (requireActivity().application as DollarApplication).dollarRepository
-        dollarGraphViewModel= ViewModelProvider(requireActivity(),
-            DollarGraphViewModelFactory(repository)).get(DollarGraphViewModel::class.java)*/
 
-        /*dollarGraphViewModel.rates.observe(requireActivity(), Observer {
-            //rateList.addAll(it)
-            configureChart(it)
-            setChart()
-        })*/
-
-        //Log.d("Dollar", rateList.toString())
-        /*configureChart()
-        setChart()*/
     }
 
     private fun configureChart(entryList: ArrayList<Entry>) {
-        /*for (i in 0 until rateList.size){
-            val x= (i+1).toFloat()
-            val y= rateList[i]
-            entryList.add(Entry(x, y))
-        }*/
 
         //create a line data set and attach it to line chart
         val lineDataSet= LineDataSet(entryList, "Dollar Chart")
